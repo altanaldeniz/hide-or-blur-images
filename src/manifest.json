@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Hide Images",
+  "description": "hides all images by adding hidden tag",
+  "version": "1.0",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "hello.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
