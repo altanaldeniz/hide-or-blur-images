@@ -1,12 +1,14 @@
 chrome.runtime.onInstalled.addListener(({ reason }) => {
   if (reason === 'install') {
     chrome.storage.local.set({
-      currentState: 'ON',
+      active: 'ON',
+      hide: 'HIDE',
     })
   }
 })
 
 // chrome.tabs.onUpdated.addListener(async (tabId) => {
+//   console.log('HEEEY')
 //   const { currentState } = await chrome.storage.local.get('currentState')
 //   if (currentState == 'ON') {
 //     chrome.scripting
@@ -17,5 +19,3 @@ chrome.runtime.onInstalled.addListener(({ reason }) => {
 //       .then(() => console.log('script injected'))
 //   }
 // })
-
-console.log('test')

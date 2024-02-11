@@ -1,19 +1,33 @@
-const { currentState } = await chrome.storage.local.get('currentState')
-const button = document.querySelector('button')
-button.innerHTML = currentState
-button.addEventListener('click', async () => {
-  const { currentState } = await chrome.storage.local.get('currentState')
-  if (currentState === 'ON') {
+const { active, hide } = await chrome.storage.local.get()
+const toggleActive = document.getElementById('toggleActive')
+const toggleHide = document.getElementById('toggleHide')
+toggleActive.innerHTML = active
+toggleHide.innerHTML = hide
+toggleActive.addEventListener('click', async () => {
+  const { active } = await chrome.storage.local.get()
+  if (active === 'ON') {
     await chrome.storage.local.set({
-      currentState: 'OFF',
+      active: 'OFF',
     })
-    button.innerHTML = 'OFF'
+    toggleActive.innerHTML = 'OFF'
   } else {
     await chrome.storage.local.set({
-      currentState: 'ON',
+      active: 'ON',
     })
-    button.innerHTML = 'ON'
+    toggleActive.innerHTML = 'ON'
   }
-
-  console.log('click, currently state is: ', currentState)
+})
+toggleHide.addEventListener('click', async () => {
+  const { hide } = await chrome.storage.local.get()
+  if (hide === 'HIDE') {
+    await chrome.storage.local.set({
+      hide: 'BLUR',
+    })
+    toggleHide.innerHTML = 'BLUR'
+  } else if (hide === 'BLUR') {
+    await chrome.storage.local.set({
+      hide: 'HIDE',
+    })
+    toggleHide.innerHTML = 'HIDE'
+  }
 })
