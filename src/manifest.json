@@ -3,7 +3,7 @@
   "name": "Hide Images",
   "description": "hides all images by adding hidden tag",
   "version": "1.0",
-  "permissions": ["activeTab", "storage", "scripting"],
+  "permissions": ["activeTab", "storage", "scripting", "tabs"],
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "hello.html"

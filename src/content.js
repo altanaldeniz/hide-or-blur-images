@@ -1,6 +1,6 @@
 console.log('content script loaded')
 ;(async () => {
-  const { active, hide } = await chrome.storage.local.get()
+  const { active, hide, blurAmount } = await chrome.storage.local.get()
   if (active === 'ON') {
     console.log('EXTENSION IS CURRENTLY ON')
     const observerTarget = document.querySelector('html')
@@ -10,7 +10,7 @@ console.log('content script loaded')
       attributes: true,
     }
     const observer = new MutationObserver(() =>
-      hideOrBlurImages(hide, (amount = '5px'))
+      hideOrBlurImages(hide, blurAmount)
     )
     observer.observe(observerTarget, observerOptions)
 
@@ -24,7 +24,7 @@ console.log('content script loaded')
         })
       } else if (hide === 'BLUR') {
         images.forEach((image, i) => {
-          image.style.filter = `blur(${amount})` // Add 'hidden' CSS property
+          image.style.filter = `blur(${amount}px)` // Add 'hidden' CSS property
           totalImage = i
         })
       }
