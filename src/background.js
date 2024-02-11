@@ -7,15 +7,16 @@ chrome.runtime.onInstalled.addListener(({ reason }) => {
   }
 })
 
-// chrome.tabs.onUpdated.addListener(async (tabId) => {
-//   console.log('HEEEY')
-//   const { currentState } = await chrome.storage.local.get('currentState')
-//   if (currentState == 'ON') {
-//     chrome.scripting
-//       .executeScript({
-//         target: { tabId: tabId },
-//         files: ['content.js'],
-//       })
-//       .then(() => console.log('script injected'))
-//   }
-// })
+chrome.tabs.onUpdated.addListener(async (tabId) => {
+  console.log('HEEEY')
+  const { active } = await chrome.storage.local.get()
+  if (active == 'ON') {
+    chrome.scripting
+      .executeScript({
+        target: { tabId: tabId },
+        files: ['content.js'],
+        injectImmediately: true,
+      })
+      .then(() => console.log('script injected'))
+  }
+})
