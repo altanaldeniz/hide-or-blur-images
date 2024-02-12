@@ -1,7 +1,7 @@
 console.log('content script loaded')
 ;(async () => {
   const { active, hide, blurAmount } = await chrome.storage.local.get()
-  if (active === 'ON') {
+  if (active) {
     console.log('EXTENSION IS CURRENTLY ON')
     const observerTarget = document.querySelector('html')
     const observerOptions = {

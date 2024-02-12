@@ -1,9 +1,9 @@
 chrome.runtime.onInstalled.addListener(({ reason }) => {
   if (reason === 'install') {
     chrome.storage.local.set({
-      active: 'ON',
+      active: true,
       hide: 'HIDE',
-      blurAmount: 0,
+      blurAmount: 5,
     })
   }
 })
@@ -11,7 +11,7 @@ chrome.runtime.onInstalled.addListener(({ reason }) => {
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
   if (!tab.url.startsWith('chrome://') && !tab.url.startsWith('edge://')) {
     const { active } = await chrome.storage.local.get()
-    if (active == 'ON') {
+    if (active) {
       chrome.scripting
         .executeScript({
           target: { tabId: tabId },
