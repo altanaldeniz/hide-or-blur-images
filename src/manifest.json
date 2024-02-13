@@ -7,6 +7,13 @@
   "background": {
     "service_worker": "background.js"
   },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
   "description": "Hide or Blur all images with one click. Completely free and easy to use.",
   "icons": {
     "16": "img/icon-16.png",
@@ -14,8 +21,7 @@
     "64": "img/icon-64.png",
     "128": "img/icon-128.png"
   },
-  "host_permissions": ["<all_urls>"],
   "name": "Hide or Blur Images",
-  "permissions": ["storage", "scripting", "tabs"],
+  "permissions": ["storage"],
   "version": "1.0.2"
 }
