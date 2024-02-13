@@ -28,7 +28,6 @@ console.log('content script loaded')
           totalImage = i
         })
       }
-      console.log(`${totalImage} of images affected`)
     }
   }
 })()

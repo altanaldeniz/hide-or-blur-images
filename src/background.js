@@ -16,13 +16,11 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
   ) {
     const { active } = await chrome.storage.local.get()
     if (active) {
-      chrome.scripting
-        .executeScript({
-          target: { tabId: tabId },
-          files: ['content.js'],
-          injectImmediately: true,
-        })
-        .then(() => console.log('script injected'))
+      chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        files: ['content.js'],
+        injectImmediately: true,
+      })
     }
   }
 })
