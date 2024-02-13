@@ -16,6 +16,6 @@
   },
   "host_permissions": ["<all_urls>"],
   "name": "Hide or Blur Images",
-  "permissions": ["activeTab", "storage", "scripting", "tabs"],
+  "permissions": ["storage", "scripting", "tabs"],
   "version": "1.0.1"
 }
