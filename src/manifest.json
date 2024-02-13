@@ -1,8 +1,12 @@
 {
   "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html"
+  },
   "author": "Altan Aldeniz",
-  "name": "Hide or Blur Images",
-  "version": "1.0.1",
+  "background": {
+    "service_worker": "background.js"
+  },
   "description": "Hide or Blur all images with one click. Completely free and easy to use.",
   "icons": {
     "16": "img/icon-16.png",
@@ -10,12 +14,8 @@
     "64": "img/icon-64.png",
     "128": "img/icon-128.png"
   },
-  "permissions": ["activeTab", "storage", "scripting", "tabs"],
   "host_permissions": ["<all_urls>"],
-  "action": {
-    "default_popup": "popup.html"
-  },
-  "background": {
-    "service_worker": "background.js"
-  }
+  "name": "Hide or Blur Images",
+  "permissions": ["activeTab", "storage", "scripting", "tabs"],
+  "version": "1.0.1"
 }
