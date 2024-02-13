@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "author": "Altan Aldeniz",
   "name": "Hide or Blur Images",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hide or Blur all images with one click. Completely free and easy to use.",
   "icons": {
     "16": "img/icon-16.png",

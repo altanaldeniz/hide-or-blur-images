@@ -14,7 +14,7 @@ body {
   --toggler-ui-width: 4em;
   --toggler-ui-height: 2em;
   --toggler-ui-bg-color: 192 192 192;
-  --toggler-ui-bg-color-active: 5 5 5;
+  --toggler-ui-bg-color-active: 0, 92, 200;
   --toggler-ui-color: 250 250 250;
   --toggler-ui-border-color: 0 0 0 / 10%;
   --toggler-ui-radius: 1em;
@@ -45,9 +45,6 @@ body {
   align-items: center;
   display: none;
   min-height: 40px;
-}
-
-#range-input {
 }
 
 #range-input[disabled] {
