@@ -1,9 +1,16 @@
-A Chrome extension to hide or blur all images on the screen. You can download it on Chrome Web Store via this [Link](https://chromewebstore.google.com/detail/hide-or-blur-images/blgggfgkhimhiomoibaaiplkdcffpefg).
+# Hide or Blur Images
 
-https://github.com/altanaldeniz/hide-or-blur-images/assets/94818506/9c01cadf-e42d-441a-bd1c-2730a26f725c
+A chrome extension that hides or blurs every and upcoming image on the page, can be helpful to people with arachnophobia.
 
-- Extension can be easily turned ON or OFF with a simple click.
-- Can change between hide mode or blur mode. Blur intensity can also be adjusted.
-- Completely FREE and easy to use.
+## Installing
 
-P.S. This extension is developed by someone with strong arachnophobia.
+You can either download it directly from Chrome Web Store [Link](https://chromewebstore.google.com/detail/hide-or-blur-images/blgggfgkhimhiomoibaaiplkdcffpefg) or install locally.
+
+To install locally, go to Settings>Extensions and enable Developer mode. On the top-left Load Unpacked button will appear, click on it and select the `src` folder. Only works for Chromium based browsers.
+
+## Features
+
+- Once toggled on, works consistently on all sites.
+- Can switch between hide mode and blur mode.
+- Blur intensity can be adjusted.
+- Completely free and easy to use.
