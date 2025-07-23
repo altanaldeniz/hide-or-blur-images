@@ -23,5 +23,5 @@
   },
   "name": "Hide or Blur Images",
   "permissions": ["storage"],
-  "version": "1.0.2"
+  "version": "1.0.3"
 }
